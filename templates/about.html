@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Sign Language Detection</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      color: #f5f5f5;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* 🔹 Navbar Styling */
+    .navbar {
+      background: rgba(31, 25, 25, 0.8);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      background: linear-gradient(90deg, #00e5ff, #ff4081);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      color: #f5f5f5 !important;
+      font-weight: 500;
+      position: relative;
+      margin: 0 12px;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: linear-gradient(90deg, #00e5ff, #ff4081);
+      transition: width 0.3s ease-in-out;
+    }
+    .nav-link:hover {
+      color: #00e5ff !important;
+      transform: translateY(-2px);
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    .nav-link.active {
+      color: #ff4081 !important;
+    }
+    .container {
+      margin-top: 120px; /* navbar overlap fix */
+      max-width: 1100px;
+    }
+
+    /* 🔹 Card Styling */
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      border: none;
+      border-radius: 20px;
+      padding: 40px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      margin-bottom: 40px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+      background: linear-gradient(90deg, #00e5ff, #ff4081);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    h2 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #00e5ff;
+      margin-top: 30px;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      color: #f1f1f1;
+    }
+    ul li i {
+      background: rgba(0, 229, 255, 0.15);
+      padding: 10px;
+      border-radius: 50%;
+      color: #00e5ff;
+      min-width: 40px;
+      text-align: center;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+    ul li:hover i {
+      background: #ff4081;
+      color: #fff;
+    }
+    .divider {
+      width: 70%;
+      height: 3px;
+      background: linear-gradient(90deg, #00e5ff, #ff4081);
+      margin: 30px auto;
+      border-radius: 2px;
+    }
+    .btn-custom {
+      background: linear-gradient(90deg, #00e5ff, #ff4081);
+      color: #fff;
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-weight: bold;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+    }
+    .btn-custom:hover {
+      background: linear-gradient(90deg, #ff4081, #00e5ff);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(0,229,255,0.6);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🔹 Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">ASL Project</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/about">About</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🔹 Page Content -->
+  <div class="container">
+    <div class="card">
+      <h1>About Me</h1>
+      <p class="text-center">Hi, I am <b>Pushpendra Tiwari</b>, a Computer Science & Engineering student passionate about <b>AI</b> and <b>Machine Learning</b>.  
+      This page highlights my ongoing <b>Sign Language Detection Project</b>.</p>
+    </div>
+
+    <div class="card">
+      <h1>About the Project</h1>
+      <p>This project is a <b>Real-Time American Sign Language (ASL) Detection System</b> that uses <b>Deep Learning (CNN)</b> and <b>Computer Vision</b> to recognize ASL hand gestures through live webcam feed.  
+      It is developed with <b>Python</b> and deployed using <b>Flask</b> for web integration.</p>
+      
+      <div class="divider"></div>
+
+      <h2>Key Features</h2>
+      <ul>
+        <li><i class="fas fa-video"></i> Live video feed integration using OpenCV</li>
+        <li><i class="fas fa-hand-sparkles"></i> Real-time prediction of ASL alphabets (A–Z)</li>
+        <li><i class="fas fa-robot"></i> Trained CNN model for gesture recognition</li>
+        <li><i class="fas fa-desktop"></i> User-friendly Flask web interface</li>
+        <li><i class="fas fa-sync"></i> Instant prediction updates without delay</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2>Technology Stack</h2>
+      <ul>
+        <li><i class="fab fa-python"></i> Python, TensorFlow/Keras for Deep Learning</li>
+        <li><i class="fas fa-camera"></i> OpenCV for image preprocessing & live video</li>
+        <li><i class="fas fa-server"></i> Flask for backend & API integration</li>
+        <li><i class="fab fa-bootstrap"></i> HTML, CSS, Bootstrap for frontend UI</li>
+      </ul>
+
+      <div class="divider"></div>
+
+      <h2>Workflow</h2>
+      <p class="text-center">Gesture → Preprocessing → CNN Model → Prediction → Display on Web Interface</p>
+
+      <div class="divider"></div>
+
+      <h2>Future Scope</h2>
+      <ul>
+        <li><i class="fas fa-language"></i> Extend detection from alphabets to words & sentences</li>
+        <li><i class="fas fa-volume-up"></i> Integrate <b>Text-to-Speech</b> for real-time voice output</li>
+        <li><i class="fas fa-mobile-alt"></i> Build a mobile application for accessibility</li>
+        <li><i class="fas fa-users"></i> Enhance usability for education & healthcare communication</li>
+      </ul>
+    </div>
+
+    <div class="card text-center">
+      <h2>Find Me Online</h2>
+      <a href="https://www.linkedin.com/in/pushpendra-tiwari-4b3920300" target="_blank" class="btn-custom">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+      <a href="https://github.com/ptCStiwari" target="_blank" class="btn-custom">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+      <a href="/" class="btn-custom">⬅ Back to Home</a>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
