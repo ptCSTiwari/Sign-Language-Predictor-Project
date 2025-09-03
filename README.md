@@ -2,7 +2,7 @@
 
 > A Deep Learning–based system for detecting **Sign Language Alphabets** in real time using **OpenCV** and **CNN models**.
 
-![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Python](https://img.shields.io/badge/Python-3.11.9+-blue.svg)
 ![Flask](https://img.shields.io/badge/Flask-Backend-orange.svg)
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-CNN-green)
 ![Status](https://img.shields.io/badge/Status-Active-success.svg)
